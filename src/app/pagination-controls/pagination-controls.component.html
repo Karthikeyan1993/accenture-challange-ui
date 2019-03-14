@@ -1,0 +1,9 @@
+<ul class="list-inline pull-right">
+	<li>
+		<span class="user-select-none">page of [{{page}}] of [{{totalPages}}]</span>
+      <span (click)="getFirstPage($event)" class="fa fa-angle-double-left angle-icon user-select-none" aria-hidden="true"></span>
+      <span (click)="getPreviousPage($event)" class="fa fa-angle-left angle-icon user-select-none" aria-hidden="true"></span>
+      <span (click)="getNextPage($event)" class="fa fa-angle-right angle-icon user-select-none" aria-hidden="true"></span>
+      <span (click)="getLastPage($event)" class="fa fa-angle-double-right angle-icon user-select-none" aria-hidden="true"></span>
+   </li>
+</ul>

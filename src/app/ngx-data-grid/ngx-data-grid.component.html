@@ -1,0 +1,26 @@
+<ul class="list-inline">
+	<li>Show</li>
+	<li>
+		<select name="paginationLimit" id="paginationLimit" (change)="page=1;" class="form-control input-sm" [(ngModel)]="paginationLimit">
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+        </select>
+    </li>
+    <li>entries</li>
+</ul>
+<div class="table-responsive" style="height: 400px;width:100%;disply:block;">
+    <table class="table table-condensed table-hover">
+        <thead>
+            <ng-template *ngTemplateOutlet="headerTemplate">
+
+            </ng-template>
+        </thead>
+        <tbody *ngIf="rowData">
+            <ng-container *ngFor="let item of rowData|paginator:page:paginationLimit| tableSort : direction :prop">
+                <ng-template *ngTemplateOutlet="bodyTemplate;context:{$implicit:item}"></ng-template>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+<app-pagination-controls *ngIf="rowData.length" [rowData]="rowData" [page]="page" [limit]="paginationLimit" (pageChange)="page=$event"></app-pagination-controls>

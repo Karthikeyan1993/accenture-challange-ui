@@ -1,0 +1,157 @@
+<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+		<div class="page-header">
+			<h2>
+				<span class="fa fa-book h-icon" aria-hidden="true"></span>
+				ID:<span [innerHTML]="statement?.id"></span>
+     </h2>
+    </div>
+  </div>
+</div>
+<div class="back-link">
+   <a routerLink="/statement" class="btn btn-accent">Back to statement</a>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-lg-6">
+    <div class="panel">
+      <div class="panel-heading">Basic Information</div>
+        <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Id</td>
+                  <td>{{statement?.id}}</td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td>{{statement?.name}}</td>
+                </tr>
+                <tr>
+                  <td>Sex</td>
+                  <td>{{statement?.sex | statementUtil : 'sex'}}</td>
+                </tr>
+                <tr>
+                  <td>Education</td>
+                  <td>{{statement?.education | statementUtil:'education'}}</td>
+                </tr>
+                                <tr>
+                  <td>Marriage</td>
+                  <td>{{statement?.marriage | statementUtil:'marriage'}}</td>
+                </tr>
+                                <tr>
+                  <td>Age</td>
+                  <td>{{statement?.age | statementUtil:'age'}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+    <div class="panel">
+      <div class="panel-heading">Pay Details</div>
+        <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Pay_0</td>
+                  <td>{{statement?.pay_0}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_2</td>
+                  <td>{{statement?.pay_2}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_3</td>
+                  <td>{{statement?.pay_3}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_4</td>
+                  <td>{{statement?.pay_4}}</td>
+                </tr>
+                                <tr>
+                  <td>Pay_5</td>
+                  <td>{{statement?.pay_5}}</td>
+                </tr>
+                                <tr>
+                  <td>Pay_6</td>
+                  <td>{{statement?.pay_6}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-md-6 col-lg-6">
+    <div class="panel">
+      <div class="panel-heading">Bill Amount Details</div>
+        <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Bill_amt1</td>
+                  <td>{{statement?.bill_amt1|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Bill_amt2</td>
+                  <td>{{statement?.bill_amt2|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Bill_amt3</td>
+                  <td>{{statement?.bill_amt3|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Bill_amt4</td>
+                  <td>{{statement?.bill_amt4|currency}}</td>
+                </tr>
+                                <tr>
+                  <td>Bill_amt5</td>
+                  <td>{{statement?.bill_amt5|currency}}</td>
+                </tr>
+                                <tr>
+                  <td>Bill_amt6</td>
+                  <td>{{statement?.bill_amt6|currency}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-6 col-md-6 col-lg-6">
+    <div class="panel">
+      <div class="panel-heading">Pay Amount Details</div>
+        <div class="panel-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Pay_amt1</td>
+                  <td>{{statement?.pay_amt1|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_amt2</td>
+                  <td>{{statement?.pay_amt2|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_amt3</td>
+                  <td>{{statement?.pay_amt3|currency}}</td>
+                </tr>
+                <tr>
+                  <td>Pay_amt4</td>
+                  <td>{{statement?.pay_amt4|currency}}</td>
+                </tr>
+                                <tr>
+                  <td>Pay_amt5</td>
+                  <td>{{statement?.pay_amt5|currency}}</td>
+                </tr>
+                                <tr>
+                  <td>Pay_amt6</td>
+                  <td>{{statement?.pay_amt6|currency}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>

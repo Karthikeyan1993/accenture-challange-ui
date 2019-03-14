@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="page-header">
+            <h2>
+				<img style="padding-right:5px;" src="https://cdn0.iconfinder.com/data/icons/shift-ecommerce/32/American_Express-512.png" alt="logo" height="40">
+				<span>American Express back office</span>
+      </h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-filled">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group">
+                            <input (input)="trackSearch();" class="form-control" type="text" placeholder="Search by Id" style="width: 100%" [(ngModel)]="search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" (click)="searchById();"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-filled">
+            <div class="panel-header"></div>
+            <div class="panel-body">
+                <app-ngx-data-grid [prop]="prop" [direction]="direction" [rowData]="data">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th (click)="sort(col.field)" *ngFor="let col of colDefs">
+                                <span class="display-header" [innerHTML]="col.displayName"></span>
+                                <span [ngClass]="getSortClass(col.field)" class="sort-icon glyphicon" aria-hidden="true"></span>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item>
+                        <tr>
+                            <td>
+                                <a [routerLink]="['view',item.id]">{{item.id}}</a>
+                            </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.limit_bal}}</td>
+                            <td>{{item.sex | statementUtil : 'sex'}}</td>
+                            <td>{{item.education | statementUtil:'education'}}</td>
+                            <td>{{item.marriage| statementUtil:'marriage'}}</td>
+                            <td>{{item.age | statementUtil:'age'}}</td>
+                            <td>{{item.pay_0}}</td>
+                            <td>{{item.pay_2}}</td>
+                            <td>{{item.pay_3}}</td>
+                            <td>{{item.pay_4}}</td>
+                            <td>{{item.pay_5}}</td>
+                            <td>{{item.pay_6}}</td>
+                            <td>{{item.bill_amt1|currency}}</td>
+                            <td>{{item.bill_amt2|currency}}</td>
+                            <td>{{item.bill_amt3|currency}}</td>
+                            <td>{{item.bill_amt4|currency}}</td>
+                            <td>{{item.bill_amt5|currency}}</td>
+                            <td>{{item.bill_amt6|currency}}</td>
+                            <td>{{item.pay_amt1|currency}}</td>
+                            <td>{{item.pay_amt2|currency}}</td>
+                            <td>{{item.pay_amt3|currency}}</td>
+                            <td>{{item.pay_amt4|currency}}</td>
+                            <td>{{item.pay_amt5|currency}}</td>
+                            <td>{{item.pay_amt6|currency}}</td>
+                            <td>{{item.default_payment_next_month}}</td>
+                        </tr>
+                    </ng-template>
+                </app-ngx-data-grid>
+            </div>
+        </div>
+    </div>
+</div>
